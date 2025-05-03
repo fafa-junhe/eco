@@ -46,7 +46,7 @@ class CustomItemsMythicMobs(
         override fun getDrop(data: DropMetadata, v: Double): AbstractItemStack {
             val item = Items.lookup(id)
             if (item is EmptyTestableItem) {
-                plugin.logger.warning("Item with ID $id is invalid, check your configs!")
+                plugin.logger.warning("Item with ID $id is invalid,  check your configs!")
                 return BukkitItemStack(ItemStack(Material.AIR))
             }
             return BukkitItemStack(item.item.apply { amount = v.toInt() })
